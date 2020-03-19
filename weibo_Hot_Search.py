@@ -44,17 +44,15 @@ time_name = time.strftime('%Y{y}%m{m}%d{d}%H{h}',time.localtime()).format(y='年
 year_path = time.strftime('%Y{y}',time.localtime()).format(y='年')
 month_path = time.strftime('%m{m}',time.localtime()).format(m='月')
 day_month = time.strftime('%d{d}',time.localtime()).format(d='日')
-year_path = "./" + year_path + '/'+ month_path + '/' + day_month
-if not os.path.exists(year_path):
-    os.makedirs(year_path)
+all_path = "./" + year_path + '/'+ month_path + '/' + day_month
+if not os.path.exists(all_path):
+    # 创建多层路径
+    os.makedirs(all_path)
 
 
-
-root = year_path  + "/"
+# 最终文件存储位置
+root = all_path  + "/"
 path = root + time_name + '.md'
-if not os.path.exists(root):
-    os.mkdir(root)
-
 
 
 print(path)
