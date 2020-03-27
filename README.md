@@ -21,7 +21,7 @@ pip install -r requirements.txt
 进行安装运行所需的环境
 
 # 运行
-请确保你已准备好所需的运行环境，然后执行如下命令进行开始爬取：
+请确保你已准备好所需的运行环境，然后执行如下命令进行开始爬取数据：
 ```
 python weibo_Hot_Search.py
 ```
