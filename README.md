@@ -25,8 +25,8 @@ pip install -r requirements.txt
 # 运行
 * 请确保你已准备好所需的运行环境
 * 运行方法（任选一种）
-	1. 在仓库目录下运行 ```weibo_Hot_Search_bs4.py```（新增） 或 ```weibo_Hot_Search_lxml.py```
-	2. 在cmd中执行 ```python weibo_Hot_Search_bs4.py```（新增） 或 ```python weibo_Hot_Search_lxml.py```
+	1. 在仓库目录下运行 ```weibo_Hot_Search_bs4.py```（新增） 或 ```weibo_Hot_Search.py```
+	2. 在cmd中执行 ```python weibo_Hot_Search_bs4.py```（新增） 或 ```python weibo_Hot_Search.py```
 * 自动运行：利用Windows任务计划程序实现即可
 
 # 生成文件
