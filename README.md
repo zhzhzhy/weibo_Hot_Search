@@ -1,4 +1,4 @@
-# weibo_Hot_Search
+# Weibo_Hot_Search
 都说互联网人的记忆只有七秒钟，可我却想记录下这七秒钟的记忆。
 
 项目已部署在服务器，会在每天的上午 11 点和晚上11 点定时爬取微博的热搜榜内容，保存为 Markdown 文件格式，然后上传备份到 GitHub 你可以随意下载查看。
@@ -13,6 +13,8 @@ Python 3.0 +
 pip install requests
 
 pip install lxml
+
+pip install bs4
 ```
 或者执行
 ```
@@ -21,10 +23,11 @@ pip install -r requirements.txt
 进行安装运行所需的环境
 
 # 运行
-请确保你已准备好所需的运行环境，然后执行如下命令进行开始爬取数据：
-```
-python weibo_Hot_Search.py
-```
+* 请确保你已准备好所需的运行环境
+* 运行方法（任选一种）
+	1. 在仓库目录下运行 ```weibo_Hot_Search_bs4.py```（新增） 或 ```weibo_Hot_Search.py```
+	2. 在cmd中执行 ```python weibo_Hot_Search_bs4.py```（新增） 或 ```python weibo_Hot_Search.py```
+* 自动运行：利用Windows任务计划程序实现即可
 
 # 生成文件
 运行结束后会在当前文件夹下生成以时间命名的文件夹，如下：
@@ -41,6 +44,14 @@ python weibo_Hot_Search.py
 
 # 声明
 本项目的所有数据来源均来自 **新浪微博** 数据内容及其解释权归新浪微博所有。
+
+# 更新信息
+1. 新增bs4方法
+	* 新增文件```weibo_Hot_Search_bs4.py```
+2. 优化数据存储格式
+	* bs4方法的数据存储在```./bs4版数据/```目录下，存储数据格式为```序号-标题-热度（或置顶）```，该格式易于处理，便于后续进行数据可视化和其他分析
+3. 注意
+	* 数据文件均为.md格式存储，推荐使用记事本或类似软件打开
 
 # License
 GNU General Public License v3.0
