@@ -29,6 +29,39 @@ pip install -r requirements.txt
 	2. 在cmd中执行 ```python weibo_Hot_Search_bs4.py```（新增） 或 ```python weibo_Hot_Search.py```
 * 自动运行：利用 Windows 或 Linux 的任务计划程序实现即可
 
+## scrapy版本运行
+> 项目的结构如下
+```cmd
+>├── hotweibo
+│   ├── __init__.py
+│   ├── items.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── items.cpython-38.pyc
+│   │   ├── pipelines.cpython-38.pyc
+│   │   └── settings.cpython-38.pyc
+│   ├── settings.py
+│   ├── spiders
+│   │   ├── hot.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── hot.cpython-38.pyc
+│   │       └── __init__.cpython-38.pyc
+│   └── TimedTask.py # 可以运行此文件直接启动爬虫
+└── scrapy.cfg
+```
+* 请确保准备好MongoDB环境和Scrapy环境
+    + 推荐使用Docker安装MongoDB 
+    + 数据库和集合不需要预先创建
+* TimedTask.py 用于执行定时爬取,默认为每分钟爬取一次
+    + 在linux下可以在TimedTask脚本所在目录执行
+    ```bash
+           nohup python Timer.py >/dev/null 2>&1 &  
+    ```
+   + 具体用法可参考[这里](https://www.jianshu.com/p/4041c4e6e1b0)
+
 # 生成文件
 运行结束后会在当前文件夹下生成以时间命名的文件夹，如下：
 ```
