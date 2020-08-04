@@ -1,5 +1,4 @@
 # -*- coding=UTF-8 -*-
-#!usr/bin/env python
 # 每天爬取两次，时间点分别为上午十一点和晚上十一点
 # 不要问我为什么选择这两个时间点，因为总感觉这两个时间点会爆出来大事情
 
@@ -25,17 +24,6 @@ print(r.status_code)
 html_xpath = etree.HTML(r.text)
 data = html_xpath.xpath('//*[@id="pl_top_realtimehot"]/table/tbody/tr/td[2]')
 num = -1
-
-
-# # 解决存储路径
-# time_path = time.strftime('%Y{y}%m{m}%d{d}',time.localtime()).format(y='年', m='月', d='日')
-# time_name = time.strftime('%Y{y}%m{m}%d{d}%H{h}',time.localtime()).format(y='年', m='月', d='日',h='点')
-# root = "./" + time_path + "/"
-# path = root + time_name + '.md'
-# if not os.path.exists(root):
-#     os.mkdir(root)
-
-
 
 
 # 解决存储路径
