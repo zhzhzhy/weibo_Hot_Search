@@ -58,7 +58,7 @@ pip install -r requirements.txt
 * TimedTask.py 用于执行定时爬取,默认为每分钟爬取一次
     + 在linux下可以在TimedTask脚本所在目录执行
     ```bash
-        nohup Python Timer.py >/dev/null 2>&1 &  
+           nohup python Timer.py >/dev/null 2>&1 &  
     ```
    + 具体用法可参考[这里](https://www.jianshu.com/p/4041c4e6e1b0)
 
