@@ -27,7 +27,7 @@ pip install -r requirements.txt
 * 运行方法（任选一种）
 	1. 在仓库目录下运行 ```weibo_Hot_Search_bs4.py```（新增） 或 ```weibo_Hot_Search.py```
 	2. 在cmd中执行 ```python weibo_Hot_Search_bs4.py```（新增） 或 ```python weibo_Hot_Search.py```
-* 自动运行：利用Windows任务计划程序实现即可
+* 自动运行：利用 Windows 或 Linux 的任务计划程序实现即可
 
 # 生成文件
 运行结束后会在当前文件夹下生成以时间命名的文件夹，如下：
