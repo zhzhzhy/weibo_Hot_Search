@@ -52,13 +52,13 @@ pip install -r requirements.txt
 │   └── TimedTask.py # 可以运行此文件直接启动爬虫
 └── scrapy.cfg
 ```
-* 请确保准备好MongoDB环境和Scrapy环境
-    + 推荐使用Docker安装MongoDB 
+* 请确保准备好 MongoDB 环境和 Scrapy 环境
+    + 推荐使用 Docker 安装 MongoDB 
     + 数据库和集合不需要预先创建
 * TimedTask.py 用于执行定时爬取,默认为每分钟爬取一次
     + 在linux下可以在TimedTask脚本所在目录执行
     ```bash
-           nohup python Timer.py >/dev/null 2>&1 &  
+        nohup python Timer.py >/dev/null 2>&1 &  
     ```
    + 具体用法可参考[这里](https://www.jianshu.com/p/4041c4e6e1b0)
 
@@ -82,9 +82,9 @@ pip install -r requirements.txt
 1. 新增bs4方法
 	* 新增文件```weibo_Hot_Search_bs4.py```
 2. 优化数据存储格式
-	* bs4方法的数据存储在```./bs4版数据/```目录下，存储数据格式为```序号-标题-热度（或置顶）```，该格式易于处理，便于后续进行数据可视化和其他分析
+	* bs4 方法的数据存储在```./bs4版数据/```目录下，存储数据格式为```序号-标题-热度（或置顶）```，该格式易于处理，便于后续进行数据可视化和其他分析。
 3. 注意
-	* 数据文件均为.md格式存储，推荐使用记事本或类似软件打开
+	* 数据文件均为 .md 格式存储，推荐使用记事本或 Markdown 编辑器软件打开。
 
 # License
 GNU General Public License v3.0
