@@ -75,16 +75,12 @@ pip install -r requirements.txt
 使用的是新浪微博的公开热搜榜单
 链接：https://s.weibo.com/top/summary/
 
+# 更新日志
+2020年08月08日：
+1.将原有保存的 Markdown 文件数据进行整理，保存至新开仓库 [weibo_Hot_Search_Data](https://github.com/Writeup001/weibo_Hot_Search_Data) 此仓库以后用作代码更新及保存，不再在此存放数据内容。
+
 # 声明
 本项目的所有数据来源均来自 **新浪微博** 数据内容及其解释权归新浪微博所有。
-
-# 更新信息
-1. 新增bs4方法
-	* 新增文件```weibo_Hot_Search_bs4.py```
-2. 优化数据存储格式
-	* bs4 方法的数据存储在```./bs4版数据/```目录下，存储数据格式为```序号-标题-热度（或置顶）```，该格式易于处理，便于后续进行数据可视化和其他分析。
-3. 注意
-	* 数据文件均为 .md 格式存储，推荐使用记事本或 Markdown 编辑器软件打开。
 
 # License
 GNU General Public License v3.0
