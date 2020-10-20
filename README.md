@@ -1,11 +1,8 @@
 # Weibo_Hot_Search
 都说互联网人的记忆只有七秒钟，可我却想记录下这七秒钟的记忆。
 
-<<<<<<< HEAD
+
 项目已部署在服务器，会在每天的上午 11 点和晚上11 点定时爬取微博的热搜榜内容，保存为 Markdown 文件格式，然后上传备份到 GitHub 你可以随意[下载查看](https://github.com/Writeup007/weibo_Hot_Search_Data)。
-=======
-项目已部署在服务器，会在每天的上午 11 点和晚上11 点定时爬取微博的热搜榜内容，保存为 Markdown 文件格式，然后上传备份到 GitHub 你可以随意[下载查看](https://github.com/Writeup001/weibo_Hot_Search_Data)。
->>>>>>> 34b777fd8a8615ebed30a6e1391d5e0f6f8331a6
 
 不要问我为什么选择 11 这两个时间点，因为个人总感觉这两个时间点左右会有大事件发生。
 
