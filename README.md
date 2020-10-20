@@ -1,7 +1,7 @@
 # Weibo_Hot_Search
 都说互联网人的记忆只有七秒钟，可我却想记录下这七秒钟的记忆。
 
-项目已部署在服务器，会在每天的上午 11 点和晚上11 点定时爬取微博的热搜榜内容，保存为 Markdown 文件格式，然后上传备份到 GitHub 你可以随意[下载查看](https://github.com/Writeup001/weibo_Hot_Search_Data)。
+项目已部署在服务器，会在每天的上午 11 点和晚上11 点定时爬取微博的热搜榜内容，保存为 Markdown 文件格式，然后上传备份到 GitHub 你可以随意[下载查看](https://github.com/Writeup007/weibo_Hot_Search_Data)。
 
 不要问我为什么选择 11 这两个时间点，因为个人总感觉这两个时间点左右会有大事件发生。
 
@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 # 更新日志
 2020年08月08日：
-1.将原有保存的 Markdown 文件数据进行整理，保存至新开仓库 [weibo_Hot_Search_Data](https://github.com/Writeup001/weibo_Hot_Search_Data) 此仓库以后用作代码更新及保存，不再在此存放数据内容。
+1.将原有保存的 Markdown 文件数据进行整理，保存至新开仓库 [weibo_Hot_Search_Data](https://github.com/Writeup007/weibo_Hot_Search_Data) 此仓库以后用作代码更新及保存，不再在此存放数据内容。
 
 # 声明
 本项目的所有数据来源均来自 **新浪微博** 数据内容及其解释权归新浪微博所有。
