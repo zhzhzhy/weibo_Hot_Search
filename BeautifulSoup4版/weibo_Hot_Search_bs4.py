@@ -1,11 +1,12 @@
 # -*- coding=UTF-8 -*-
 # 每天爬取两次，时间点分别为上午十一点和晚上十一点
 # 不要问我为什么选择这两个时间点，因为总感觉这两个时间点会爆出来大事情
-
+# 需要requests、bs4、pandas库
 import os
 import time
 import requests
 import bs4
+import pandas as pd
 
 def crawl():
     '''
@@ -23,8 +24,11 @@ def crawl():
         'Referer': 'https://weibo.com/',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
     }
-    r = requests.get(url,headers=headers)
-    return r
+    try:
+        r = requests.get(url, headers=headers, timeout =10)
+        return r
+    except:
+        return 0
     # 爬虫结束
 
 def data_processing(r):
@@ -35,12 +39,18 @@ def data_processing(r):
 
     html_xpath = bs4.BeautifulSoup(r.text,'html.parser')
     data = {}
+    title = []
+    hot = []
     https = html_xpath.find_all('td',attrs={'class':'td-02'})
     for i in range(len(https)):
         tag = https[i].text.split('\n')
         if i == 0:
-            tag[2] = '置顶'
-        data[tag[1]]=tag[2]
+            tag[2] = '0'
+        title.append(tag[1])
+        hot.append(tag[2])
+        data['标题'] = title
+        data['热度'] = hot
+    data = pd.DataFrame(data)
     return data
     # 处理结束，标题和热度都存在字典data中
 
@@ -55,35 +65,32 @@ def build_path():
     year_path = time.strftime('%Y{y}',time.localtime()).format(y='年')
     month_path = time.strftime('%m{m}',time.localtime()).format(m='月')
     day_month = time.strftime('%d{d}',time.localtime()).format(d='日')
-    all_path = "./bs4版数据/" + year_path + '/'+ month_path + '/' + day_month
+    all_path = "./bs4[.csv]版数据/" + year_path + '/'+ month_path + '/' + day_month
     if not os.path.exists(all_path):
         # 创建多层路径
         os.makedirs(all_path)
     # 最终文件存储位置
     root = all_path  + "/"
-    path = root + time_name + '.md'
+    path = root + time_name + '.csv'
     return path
 
 def write_file(data,path):
     '''
     写入文件模块
-    无返回
     '''
-    
-    with open(path,'w',encoding='utf8') as f:
-        num = 0
-        for key in data:
-            num += 1
-            f.write('{}-{}-{}\n'.format(num,key,data[key]))
-    f.close()
+    data.to_csv(path,encoding='utf-8-sig') #编码格式必须为 utf-8-sig 不能为 utf-8
 
 def main():
     '''
     主函数
-    无返回
     '''
+    r = crawl()
+    if r :
+        write_file(data_processing(r),build_path())
+        print('获取热搜完毕，三秒后关闭…')
+    else :
+        print('爬虫失败，检查网络')
+    time.sleep(3)
     
-    write_file(data_processing(crawl()),build_path())
-
 if __name__ == '__main__':
     main()
